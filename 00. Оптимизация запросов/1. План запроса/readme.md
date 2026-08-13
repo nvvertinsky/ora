@@ -26,7 +26,8 @@
   
   2. dbms_xplan.display_cursor
   ````
-  alter session set statistics_level = ALL;                                    # Сбор статистики по реальному плану запроса. Или указать хинт /*gather_plan_statistics*/
+  alter session set statistics_level = ALL;                                    # Если нужно увидеть реальные цифры выполнения запроса, то нужно включить сбор статистики по плану запроса. Именно реальные цифры выполнения называются статистикой.
+  /*gather_plan_statistics*/                                                   # Или указать хинт для сбора статистики выполнения
   select /*MY*/ * from employees;                                              # Выполняем запрос
   select * from v$sql t where lower(t.sql_text) like lower('%MY%');            # Находим его sql_id
   select * from table(dbms_xplan.display_cursor('sql_id', null, 'ALLSTATS'));  # Получаем план запроса
