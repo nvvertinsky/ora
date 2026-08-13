@@ -9,4 +9,11 @@ select s.sql_id,
        s.sql_text
   from v$sql s
  where s.sql_text like '%documents%';
+
+-- Находим параметры запроса
+select b.name,
+       b.last_captured,
+       b.value_string
+  from v$sql_bind_capture b
+ where b.sql_id = 'sadk343r3fj3o434'
 ```
