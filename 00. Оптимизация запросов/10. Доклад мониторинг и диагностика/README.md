@@ -17,3 +17,5 @@ select b.name,
   from v$sql_bind_capture b
  where b.sql_id = 'sadk343r3fj3o434'
 ```
+
+Индекс в 
