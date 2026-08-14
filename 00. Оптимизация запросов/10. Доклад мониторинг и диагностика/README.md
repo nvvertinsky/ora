@@ -23,3 +23,10 @@ select b.name,
 select *
   from table(dbms_xplan.display('sql_id', format=>'+peeked binds'))  #  Показать параметры на основании которых построили план
 ```
+
+SQL Monitor мониторит все запрос которые выполнялись больше 5 сек, так же есть параметры запроса
+```
+select sql_id, sql_exec_id
+  from v$sql_monitor
+ where sql_text like '%documents%';
+```
