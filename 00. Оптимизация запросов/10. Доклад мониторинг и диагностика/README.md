@@ -29,4 +29,7 @@ SQL Monitor мониторит все запрос которые выполня
 select sql_id, sql_exec_id
   from v$sql_monitor
  where sql_text like '%documents%';
+
+select dbms_sqltune.report_sql_monitor('sql_id', 'sql_exec_id')
+  from dual;
 ```
